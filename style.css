@@ -157,6 +157,68 @@ cursor:not-allowed;
 pointer-events:none;
 }
 
+/* fix iPhone date input */
+
+input[type="date"]{
+width:100%;
+max-width:100%;
+padding:10px 10px;
+font-size:14px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+-webkit-appearance:none;
+appearance:none;
+}
+
+/* prevent container overflow */
+
+.input-group{
+width:100%;
+overflow:hidden;
+}
+
+/* style calendar icon */
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+filter:invert(36%) sepia(92%) saturate(2400%) hue-rotate(212deg) brightness(95%) contrast(92%);
+cursor:pointer;
+}
+
+/* better spacing for icon */
+
+input[type="date"]{
+padding-right:36px;
+}
+
+/* ripple effect */
+
+button{
+position:relative;
+overflow:hidden;
+}
+
+button::after{
+content:"";
+position:absolute;
+width:0;
+height:0;
+background:rgba(255,255,255,0.4);
+border-radius:50%;
+transform:translate(-50%,-50%);
+top:50%;
+left:50%;
+opacity:0;
+transition:width 0.4s ease,height 0.4s ease,opacity 0.6s ease;
+}
+
+button:active::after{
+width:220%;
+height:220%;
+opacity:1;
+transition:0s;
+}
+
 @keyframes spin{
 0%{transform:rotate(0deg);}
 100%{transform:rotate(360deg);}
@@ -166,6 +228,7 @@ pointer-events:none;
 
 .container{
 padding:24px;
+max-width:320px;
 }
 
 .logo{
