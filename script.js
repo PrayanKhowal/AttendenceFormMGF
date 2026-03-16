@@ -1,18 +1,15 @@
+const scriptURL = "https://script.google.com/macros/s/AKfycbyGm0j8AFuwdkToJXt7xxdPh3_CyohY5abVgjkoBUOuJJjJvAfzoqFuohTeQHt0WTfv/exec";
+
 const form = document.getElementById("attendanceForm");
 const button = document.getElementById("submitBtn");
-
-form.addEventListener("submit", function(){
-button.classList.add("loading");
-});
-
-
-const scriptURL = "https://script.google.com/macros/s/AKfycbyGm0j8AFuwdkToJXt7xxdPh3_CyohY5abVgjkoBUOuJJjJvAfzoqFuohTeQHt0WTfv/exec"
-
-const form = document.getElementById("attendanceForm");
 
 form.addEventListener("submit", function(e){
 
 e.preventDefault();
+
+/* show loading */
+button.classList.add("loading");
+button.disabled = true;
 
 const formData = new FormData(form);
 
@@ -30,6 +27,13 @@ form.reset();
 .catch(()=>{
 
 showError();
+
+})
+.finally(()=>{
+
+/* restore button */
+button.classList.remove("loading");
+button.disabled = false;
 
 });
 
@@ -59,9 +63,7 @@ toast.style.zIndex="1000";
 document.body.appendChild(toast);
 
 setTimeout(()=>{
-
 toast.remove();
-
 },3000);
 
 }
@@ -90,9 +92,7 @@ toast.style.zIndex="1000";
 document.body.appendChild(toast);
 
 setTimeout(()=>{
-
 toast.remove();
-
 },3000);
 
 }
