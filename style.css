@@ -107,6 +107,7 @@ border-top:3px solid white;
 border-radius:50%;
 display:none;
 animation:spin 1s linear infinite;
+margin:auto;
 }
 
 button.loading .spinner{
