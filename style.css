@@ -87,6 +87,10 @@ font-size:15px;
 font-weight:500;
 cursor:pointer;
 transition:all 0.25s ease;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
 }
 
 button:hover{
@@ -99,6 +103,8 @@ transform:scale(0.97);
 box-shadow:inset 0 3px 6px rgba(0,0,0,0.15);
 }
 
+/* spinner */
+
 .spinner{
 width:18px;
 height:18px;
@@ -107,7 +113,12 @@ border-top:3px solid currentColor;
 border-radius:50%;
 display:none;
 animation:spin 1s linear infinite;
-margin:auto;
+}
+
+/* loading state */
+
+button.loading{
+cursor:not-allowed;
 }
 
 button.loading .spinner{
@@ -118,22 +129,25 @@ button.loading .btn-text{
 display:none;
 }
 
+/* disable hover during loading */
+
 button.loading:hover{
 background:#2563eb;
 color:white;
-cursor:not-allowed;
 }
+
+/* disabled button */
 
 button:disabled{
 opacity:0.85;
 cursor:not-allowed;
+pointer-events:none;
 }
 
 @keyframes spin{
 0%{transform:rotate(0deg);}
 100%{transform:rotate(360deg);}
 }
-
 
 @media (max-width:480px){
 
