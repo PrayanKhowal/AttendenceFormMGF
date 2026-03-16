@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Attendance Form</title>
+<title>Attendance/Feedback Form</title>
 <link rel="icon" type="image/svg+xml" href="MGFlogo.svg">
 <link rel="stylesheet" href="style.css">
 
@@ -20,7 +20,7 @@
 
 <div class="form-header">
 <img src="MGFlogo.svg" class="logo" alt="MGF Logo">
-<h1>Attendance Form</h1>
+<h1>Attendance / Feedback Form</h1>
 </div>
 
 <form id="attendanceForm">
@@ -43,6 +43,11 @@
 <div class="input-group">
 <label>Date</label>
 <input name="date" type="date" required>
+</div>
+
+<div class="input-group">
+<label>Feedback (optional)</label>
+<textarea name="feedback" placeholder="Enter your feedback..."></textarea>
 </div>
 
 <button type="submit" id="submitBtn">
