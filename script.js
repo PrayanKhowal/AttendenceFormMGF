@@ -19,22 +19,15 @@ body:formData,
 mode:"no-cors"
 })
 .then(()=>{
-
 showSuccess();
 form.reset();
-
 })
 .catch(()=>{
-
 showError();
-
 })
 .finally(()=>{
-
-/* restore button */
 button.classList.remove("loading");
 button.disabled = false;
-
 });
 
 });
