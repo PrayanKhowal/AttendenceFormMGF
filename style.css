@@ -115,7 +115,7 @@ display:none;
 animation:spin 1s linear infinite;
 }
 
-/* loading state */
+/* loading */
 
 button.loading{
 cursor:not-allowed;
@@ -129,14 +129,27 @@ button.loading .btn-text{
 display:none;
 }
 
-/* disable hover during loading */
-
 button.loading:hover{
 background:#2563eb;
 color:white;
 }
 
-/* disabled button */
+/* success checkmark */
+
+.checkmark{
+display:none;
+font-size:18px;
+}
+
+button.success .spinner{
+display:none;
+}
+
+button.success .checkmark{
+display:inline-block;
+}
+
+/* disabled */
 
 button:disabled{
 opacity:0.85;
