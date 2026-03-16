@@ -3,11 +3,17 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbyGm0j8AFuwdkToJXt7xx
 const form = document.getElementById("attendanceForm");
 const button = document.getElementById("submitBtn");
 
+/* add checkmark element */
+
+const checkmark = document.createElement("span");
+checkmark.className = "checkmark";
+checkmark.innerText = "✓";
+button.appendChild(checkmark);
+
 form.addEventListener("submit", function(e){
 
 e.preventDefault();
 
-/* show loading */
 button.classList.add("loading");
 button.disabled = true;
 
@@ -19,15 +25,26 @@ body:formData,
 mode:"no-cors"
 })
 .then(()=>{
+
+button.classList.remove("loading");
+button.classList.add("success");
+
 showSuccess();
 form.reset();
+
+setTimeout(()=>{
+button.classList.remove("success");
+button.disabled=false;
+},2000);
+
 })
 .catch(()=>{
-showError();
-})
-.finally(()=>{
+
 button.classList.remove("loading");
-button.disabled = false;
+button.disabled=false;
+
+showError();
+
 });
 
 });
