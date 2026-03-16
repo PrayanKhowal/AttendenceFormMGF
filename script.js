@@ -1,3 +1,11 @@
+const form = document.getElementById("attendanceForm");
+const button = document.getElementById("submitBtn");
+
+form.addEventListener("submit", function(){
+button.classList.add("loading");
+});
+
+
 const scriptURL = "https://script.google.com/macros/s/AKfycbyGm0j8AFuwdkToJXt7xxdPh3_CyohY5abVgjkoBUOuJJjJvAfzoqFuohTeQHt0WTfv/exec"
 
 const form = document.getElementById("attendanceForm");
